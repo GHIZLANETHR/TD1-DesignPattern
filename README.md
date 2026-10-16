@@ -44,3 +44,18 @@ La situation modélise un plugin avec un algorithme squelette dont certaines par
 
 #### B. Version finale corrigée
 ![Diagramme de classes final](images/image_711364.png)
+## Situation 3 : Ajout dynamique de responsabilités (Decorateur)
+
+### 1. Description du Problème
+La situation consiste à ajouter des responsabilités (traitements avant et après) à un composant existant de manière dynamique, sans modifier son code source.
+
+### 2. Design Pattern Approprié : Decorator
+* **Decorator :** Permet d'attacher de nouveaux comportements à un objet en le plaçant dans des objets enveloppeurs qui contiennent ces comportements.
+
+### 3. Diagrammes de Classes
+
+#### A. Première approche (Version initiale)
+![Première version du diagramme](images/image_7125eb.png)
+
+#### B. Version finale corrigée
+![Diagramme de classes final](images/image_7183bc.png)
