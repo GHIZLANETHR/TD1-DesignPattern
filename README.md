@@ -21,9 +21,9 @@ Le pattern **Composite** est un patron de conception structurel qui permet de co
 #### A. Première approche (Version initiale)
 Ce premier diagramme montre une modélisation préliminaire de la hiérarchie des classes autour de la classe `Figure`.
 
-![Première version du diagramme](image_6f58cb.png)
+![Première version du diagramme](images/image_6f58cb.png)
 
 #### B. Version finale corrigée (Pattern Composite)
 Ce second diagramme présente la solution finale correcte en utilisant le pattern Composite :
 
-![Diagramme de classes final - Composite](image_6f58e7.png)
+![Diagramme de classes final - Composite](images/image_6f58e7.png)
