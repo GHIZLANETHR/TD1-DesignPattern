@@ -75,3 +75,39 @@ La situation consiste à notifier des objets de l'environnement (`Couloir`, `Cam
 
 #### B. Version finale corrigée
 ![Diagramme de classes final](images/image_719703.png)
+
+# Rapport d'Exercice 2 : Framework de Traitement d'Image avec Design Patterns
+
+## 1. Présentation du Problème
+L'objectif est de concevoir et développer un **Framework de traitement d'images** (représentées par un tableau d'entiers `int[]`).
+
+Le Framework doit respecter les critères suivants :
+1. **Principe Ouvert/Fermé (OCP) :** Ouvert à l'extension et fermé à la modification.
+2. **Changement dynamique du filtrage :** L'opération de filtrage doit pouvoir évoluer dans le temps et être changée dynamiquement lors de l'exécution.
+3. **Intégration d'une ancienne classe (Legacy) :** Utiliser l'ancienne classe non standard `ImplNonStandard` avec sa méthode `public int[] appliquerFiltre(String filterName, int[] data)`.
+4. **Squelette d'algorithme de compression :** Définir le squelette du traitement de compression dans une classe mère et déléguer les étapes spécifiques (`preparer`, `encoder`, `finaliser`) aux sous-classes.
+5. **Instanciation dynamique :** Permettre à l'utilisateur de saisir au clavier les noms des classes d'implémentation à exécuter via l'application cliente.
+
+---
+
+## 2. Identification des Design Patterns Appropriés
+
+| Exigence du Framework | Design Pattern Appliqué | Justification |
+| :--- | :--- | :--- |
+| **Filtrage dynamique & évolutif** | **Strategy (Stratégie)** | L'interface `Filtre` définit l'algorithme de filtrage. La classe `ImageFramework` utilise cette interface pour appliquer dynamiquement n'importe quel filtre (`FiltreNegatif`, `AdaptateurFiltre`)[cite: 11]. |
+| **Intégration de `ImplNonStandard`** | **Adapter (Adaptateur)** | La classe `AdaptateurFiltre` implémente l'interface `Filtre` et adapte l'appel vers la méthode `appliquerFiltre` de `ImplNonStandard`[cite: 11]. |
+| **Squelette de compression** | **Template Method (Méthode Gabarit)** | La classe abstraite `Compresseur` définit la méthode squelette `compresser(int[])` qui fait appel aux étapes `preparer(int[])`, `encoder(int[])` et `finaliser(int[])`, redéfinies dans `CompresseurSimple`[cite: 11]. |
+
+---
+
+## 3. Diagramme de Classes du Framework
+
+Voici le diagramme de classes correspondant à la structure retenue :
+
+![Diagramme de classes Exercice 2](images/diagrammedeclasseexe2.png)
+
+---
+
+## 4 Classe main
+![Classe Main](images/img.png)
+
