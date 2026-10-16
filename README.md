@@ -59,3 +59,19 @@ La situation consiste à ajouter des responsabilités (traitements avant et apr�
 
 #### B. Version finale corrigée
 ![Diagramme de classes final](images/image_7183bc.png)
+
+## Situation 4 : Notification d'état et couplage faible (Observer)
+
+### 1. Description do Problème
+La situation consiste à notifier des objets de l'environnement (`Couloir`, `Caméra`, `Gardien`) des changements de score d'un `Joueur` tout en garantissant un couplage faible.
+
+### 2. Design Pattern Approprié : Observer
+* **Observer :** Permet de définir un mécanisme de souscription pour notifier plusieurs objets d'un changement d'état survenant dans l'objet qu'ils observent.
+
+### 3. Diagrammes de Classes
+
+#### A. Première approche (Version initiale)
+![Première version du diagramme](images/image_71931e.png)
+
+#### B. Version finale corrigée
+![Diagramme de classes final](images/image_719703.png)
