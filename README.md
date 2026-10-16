@@ -27,3 +27,20 @@ Ce premier diagramme montre une modélisation préliminaire de la hiérarchie de
 Ce second diagramme présente la solution finale correcte en utilisant le pattern Composite :
 
 ![Diagramme de classes final - Composite](images/image_6f58e7.png)
+
+## Situation 2 : Algorithme squelette et instanciation découplée
+
+### 1. Description du Problème
+La situation modélise un plugin avec un algorithme squelette dont certaines parties varient, tout en permettant au client d'instancier les classes concrètes sans les coupler directement.
+
+### 2. Design Patterns Appropriés : Template Method & Factory Method
+* **Template Method :** Définit le squelette d'un algorithme en reportant certaines étapes sur les sous-classes.
+* **Factory Method :** Permet d'instancier des objets (les plugins) sans spécifier la classe exacte de l'objet qui sera créé.
+
+### 3. Diagrammes de Classes
+
+#### A. Première approche (Version initiale)
+![Première version du diagramme](images/image_7113bc.png)
+
+#### B. Version finale corrigée
+![Diagramme de classes final](images/image_711364.png)
